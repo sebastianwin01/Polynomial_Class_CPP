@@ -6,9 +6,10 @@ A C++ implementation of a polynomial class built to practice **dynamic memory ma
 
 A polynomial is represented as
 
-\[
-P(x) = a_0 + a_1x + a_2x^2 + \cdots + a_{n-1}x^{n-1}.
-\]
+
+$$
+P(x) = a_0 + a_1x + a_2x^2 + \cdots + a_{n-1}x^{n-1}
+$$
 
 The coefficients are stored in **ascending order of power**:
 
@@ -16,7 +17,7 @@ The coefficients are stored in **ascending order of power**:
 polynomial p{1.0, 2.0, 3.0};
 ```
 
-This represents \(P(x) = 1 + 2x + 3x^2\), where `coef_[0]` is the constant term, `coef_[1]` is the coefficient of \(x\), and so on.
+This represents $$(P(x) = 1 + 2x + 3x^2\)$$, where `coef_[0]` is the constant term, `coef_[1]` is the coefficient of \(x\), and so on.
 
 ## Features
 
@@ -48,23 +49,23 @@ After a move, the source object's `coef_` is set to `nullptr` and `len_` to `0`,
 
 **Derivative.** For
 
-\[
+$$
 P(x) = \sum_{i=0}^{n-1} a_i x^i,
-\]
+$$
 
 the first derivative is
 
-\[
+$$
 P'(x) = \sum_{i=1}^{n-1} i a_i x^{i-1}.
-\]
+$$
 
 The `derivative()` method creates a separate result polynomial with coefficients `i * coef_[i]`. For constant or empty polynomials, it returns the zero polynomial, represented by `{0}`.
 
 **Evaluation.** The `evaluate(double x) const` method computes
 
-\[
+$$
 P(x) = \sum_{i=0}^{n-1} a_i x^i
-\]
+$$
 
 using a loop that updates the current power of `x`. It does not modify the polynomial.
 
